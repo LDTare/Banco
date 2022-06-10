@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="container p-5 text-center">
+    <h1> Adicion de Registros</h1>
+</div>
+
+<div class="container">
+    <form [formGroup]="editarData" (ngSubmit)="postForm(editarData.value)">    
+        <label for="example"> Modelo</label>
+        <input type="form-control"  formControlName="Modelo" class="form-control">
+            
+        <div class="form-group row">
+            <div class="col">
+                <label for="example"> Placa</label>
+                <input type="form-control"  formControlName="Placa" class="form-control">
+            </div>
+            <div class="col">
+                <label for="example"> Marca</label>
+                <input type="form-control"  formControlName="Marca" class="form-control">
+            </div>
+        </div>
+            <div class="form group row">
+                <div class="col">
+                    <label for="example">Color</label>
+                    <input type="form-control"  formControlName="Color" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="example">Anio</label>
+                    <input type="form-control"  formControlName="Anio" class="form-control">
+                </div>
+            </div>
+        <div>
+            <label for="example"> Estado </label>
+            <input type="form-control" formControlName="Estado" class="form-control">
+        </div>
+        <br>
+        <div class="col">
+            <button type="submit" class="btn btn-primary mx-1" > Guardar </button>
+            <button type="button" class="btn btn-dark mx-1" (click)="salir()"> Salir </button>
+        </div>
+    </form>
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container p-5 text-center">
+    <h1> Edicion de Registros</h1>
+</div>
+
+<div class="container">
+    <form [formGroup]="editarData" (ngSubmit)="postForm(editarData.value, 0)">
+        <label for="example"> DPI</label>
+        <input type="form-control"  formControlName="Dpi" class="form-control">
+            
+        <div class="form-group row">
+            <div class="col">
+                <label for="example"> Nombre</label>
+                <input type="form-control"  formControlName="Nombre" class="form-control">
+            </div>
+            <div class="col">
+                <label for="example"> Apellido</label>
+                <input type="form-control"  formControlName="Apellido" class="form-control">
+            </div>
+        </div>
+            <div class="form group row">
+                <div class="col">
+                    <label for="example">Telefono</label>
+                    <input type="form-control"  formControlName="Telefono" class="form-control">
+                </div>
+            </div>
+        <div>
+            <label for="example"> Estado </label>
+            <input type="form-control" formControlName="Estado" class="form-control">
+        </div>
+        <br>
+        <div class="col">
+            <button type="submit" class="btn btn-primary mx-1" > Guardar </button>
+            <button type="button" class="btn btn-danger mx-1" (click)="eliminar(0)"> Eliminar</button>
+            <button type="button" class="btn btn-dark mx-1" (click)="salir()"> Salir </button>
+        </div>
+    </form>
+</div>
+
+<app-footer></app-footer>

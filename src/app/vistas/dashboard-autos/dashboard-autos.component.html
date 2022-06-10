@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="p-5 text-center bg-light">
+    <h1 class="display-1">Angular</h1>
+    <h4 class="text-muted">Consumo de API</h4>
+    <a class="btn btn-primary" (click)="nuevoAuto()" role="button">Ingresar Registro</a>
+  </div>
+
+<div class="container">
+
+    <table class="table table-dark table-hover mx-auto">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Color</th>
+                <th scope="col">Año</th>
+                <th style="display:none;" scope="col">Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let auto of autos" (click)="editarAuto(auto._id)">
+                <ng-container *ngIf = "auto.Estado ==1">
+                <th scope="row">{{auto._id}}</th>
+                <td>{{auto.Placa}}</td>
+                <td>{{auto.Modelo}}</td>
+                <td>{{auto.Marca}}</td>
+                <td>{{auto.Color}}</td>
+                <td>{{auto.Anio}}</td>
+                <td style="display:none;">{{auto.Estado}}</td>
+            </ng-container>
+            </tr>
+        </tbody>
+      </table>
+
+</div>
+
+<app-footer></app-footer>
